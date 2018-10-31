@@ -23,7 +23,7 @@ export class HomePage {
           await this.api.getCocktail()
             .subscribe(res => {
               console.log(res);
-              this.cocktails = res;
+              this.cocktails = res.drinks;
               loading.dismiss();
             }, err => {
               console.log(err);

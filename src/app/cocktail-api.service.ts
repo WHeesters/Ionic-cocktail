@@ -41,7 +41,7 @@ export class CocktailApiService {
     }
 
     getCocktailById(id: string): Observable<any> {
-      const url = `${idApiUrl}/${id}`;
+      const url = `${idApiUrl}${id}`;
       return this.http.get(url).pipe(
         map(this.extractData),
         catchError(this.handleError));
