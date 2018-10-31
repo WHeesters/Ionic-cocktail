@@ -7,8 +7,9 @@
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-item *ngFor="let cocktail of cocktails" routerLink="/detail/{{cocktail.idDrink}}">
+    <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
+    <ion-list>
+        <ion-item *ngFor="let cocktail of cocktails | search : terms" routerLink="/detail/{{cocktail.idDrink}}">
         <ion-avatar slot="start"><img src="{{cocktail.strDrinkThumb}}"></ion-avatar>
       {{cocktail.strDrink}}
     </ion-item>

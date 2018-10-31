@@ -22,7 +22,6 @@ export class HomePage {
           await loading.present();
           await this.api.getCocktail()
             .subscribe(res => {
-              console.log(res);
               this.cocktails = res.drinks;
               loading.dismiss();
             }, err => {
