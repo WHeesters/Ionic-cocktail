@@ -8,25 +8,18 @@
 </ion-header>
 
 <ion-content padding>
-    <ion-card>
-        <ion-avatar class="cocktail-image"><img src="{{cocktail.strDrinkThumb}}"></ion-avatar>
-    <ion-card-header>
-        <ion-card-subtitle>{{cocktail.strCategory}}</ion-card-subtitle>
-        <ion-card-title>{{cocktail.strDrink}}</ion-card-title>
-    </ion-card-header>
-
-    <ion-card-content>
-        <ion-label><strong>Glass:</strong></ion-label>
-        <ion-text>{{cocktail.strGlass}}</ion-text>
-        <ion-label><strong>Directions:</strong></ion-label>
-        <ion-text>{{cocktail.strInstructions}}</ion-text>
-        <ion-label><strong>Ingredients:</strong></ion-label>
-        <ion-grid>
-            <ion-row *ngFor="let ingredient of ingredients">
-                <ion-col>{{ingredient.ingredient}}</ion-col>
-                <ion-col>{{ingredient.measure}}</ion-col>
-            </ion-row>
-        </ion-grid>
-    </ion-card-content>
-  </ion-card>
+    <ion-avatar class="cocktail-image"><img src="{{cocktail.strDrinkThumb}}"></ion-avatar>
+    <ion-card-subtitle>{{cocktail.strCategory}}</ion-card-subtitle>
+    <ion-card-title>{{cocktail.strDrink}}</ion-card-title>
+    <ion-label><strong>Glass:</strong></ion-label>
+    <ion-text>{{cocktail.strGlass}}</ion-text>
+    <ion-label><strong>Directions:</strong></ion-label>
+    <ion-text>{{cocktail.strInstructions}}</ion-text>
+    <ion-label><strong>Ingredients:</strong></ion-label>
+    <ion-grid>
+        <ion-row *ngFor="let ingredient of ingredients">
+            <ion-col>{{ingredient.ingredient}}</ion-col>
+            <ion-col>{{ingredient.measure}}</ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>
