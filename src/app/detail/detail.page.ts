@@ -27,10 +27,9 @@ export class DetailPage implements OnInit {
         this.getCocktail();
     }
 
-    doRefresh(event) {
+    doRefresh() {
         this.random = true;
         this.getCocktail();
-        event.target.complete();
     }
 
     async getCocktail() {
