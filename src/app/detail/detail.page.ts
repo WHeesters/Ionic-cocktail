@@ -61,68 +61,19 @@ export class DetailPage implements OnInit {
     }
 
     setIngredients() {
-        this.ingredients = [
-            {
-                'ingredient': this.cocktail.strIngredient1,
-                'measure': this.cocktail.strMeasure1
-            },
-            {
-                'ingredient': this.cocktail.strIngredient2,
-                'measure': this.cocktail.strMeasure2
-            },
-            {
-                'ingredient': this.cocktail.strIngredient3,
-                'measure': this.cocktail.strMeasure3
-            },
-            {
-                'ingredient': this.cocktail.strIngredient4,
-                'measure': this.cocktail.strMeasure4
-            },
-            {
-                'ingredient': this.cocktail.strIngredient5,
-                'measure': this.cocktail.strMeasure5
-            },
-            {
-                'ingredient': this.cocktail.strIngredient6,
-                'measure': this.cocktail.strMeasure6
-            },
-            {
-                'ingredient': this.cocktail.strIngredient7,
-                'measure': this.cocktail.strMeasure7
-            },
-            {
-                'ingredient': this.cocktail.strIngredient8,
-                'measure': this.cocktail.strMeasure8
-            },
-            {
-                'ingredient': this.cocktail.strIngredient9,
-                'measure': this.cocktail.strMeasure9
-            },
-            {
-                'ingredient': this.cocktail.strIngredient10,
-                'measure': this.cocktail.strMeasure10
-            },
-            {
-                'ingredient': this.cocktail.strIngredient11,
-                'measure': this.cocktail.strMeasure11
-            },
-            {
-                'ingredient': this.cocktail.strIngredient12,
-                'measure': this.cocktail.strMeasure12
-            },
-            {
-                'ingredient': this.cocktail.strIngredient13,
-                'measure': this.cocktail.strMeasure13
-            },
-            {
-                'ingredient': this.cocktail.strIngredient14,
-                'measure': this.cocktail.strMeasure14
-            },
-            {
-                'ingredient': this.cocktail.strIngredient15,
-                'measure': this.cocktail.strMeasure15
+        let num = 1;
+        while (num <= 15) {
+            const current_ingredient = this.cocktail['strIngredient' + num];
+            const current_measure = this.cocktail['strMeasure' + num];
+            if (current_ingredient) {
+                this.ingredients.push(
+                    {
+                        'ingredient': current_ingredient,
+                        'measure': current_measure
+                    }
+                );
             }
-        ];
+            num++;
+        }
     }
-
 }
