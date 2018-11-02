@@ -17,8 +17,7 @@ export class DetailPage implements OnInit {
     constructor(public api: CocktailApiService,
                 public loadingController: LoadingController,
                 public route: ActivatedRoute,
-                public router: Router) {
-    }
+                public router: Router) { }
 
     ngOnInit() {
         if (!this.route.snapshot.paramMap.get('id')) {
@@ -61,6 +60,7 @@ export class DetailPage implements OnInit {
     }
 
     setIngredients() {
+        this.ingredients = [];
         let num = 1;
         while (num <= 15) {
             const current_ingredient = this.cocktail['strIngredient' + num];
