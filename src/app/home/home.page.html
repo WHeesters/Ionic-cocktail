@@ -5,15 +5,22 @@
         </ion-title>
     </ion-toolbar>
 </ion-header>
+
 <ion-item>
     <ion-searchbar [(ngModel)]="terms"></ion-searchbar>
-    <ion-button color="tertiary" routerLink="/detail/">Random</ion-button>
 </ion-item>
+
 <ion-content>
-    <ion-list>
-        <ion-item *ngFor="let cocktail of cocktails | search : terms" routerLink="/detail/{{cocktail.idDrink}}">
-            <ion-avatar slot="start"><img src="{{cocktail.strDrinkThumb}}"></ion-avatar>
-            {{cocktail.strDrink}}
-        </ion-item>
-    </ion-list>
+    <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+        <ion-fab-button color="secondary" routerLink="/detail/"><ion-icon name="wine"></ion-icon></ion-fab-button>
+    </ion-fab>
+    <ion-card *ngFor="let cocktail of cocktails | search : terms" routerLink="/detail/{{cocktail.idDrink}}">
+        <ion-img src="{{cocktail.strDrinkThumb}}"></ion-img>
+        <ion-card-header>
+            <ion-card-title>
+                {{cocktail.strDrink}}
+            </ion-card-title>
+        </ion-card-header>
+    </ion-card>
+
 </ion-content>
