@@ -8,6 +8,9 @@
 </ion-header>
 
 <ion-content padding>
+    <ion-refresher slot="fixed" (ionRefresh)="doRefresh($event)">
+        <ion-refresher-content></ion-refresher-content>
+    </ion-refresher>
     <ion-avatar class="cocktail-image"><img src="{{cocktail.strDrinkThumb}}"></ion-avatar>
     <ion-card-subtitle>{{cocktail.strCategory}}</ion-card-subtitle>
     <ion-card-title>{{cocktail.strDrink}}</ion-card-title>

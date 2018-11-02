@@ -12,6 +12,7 @@ export class DetailPage implements OnInit {
 
     cocktail: any = {};
     ingredients: any = [];
+    random = false;
 
     constructor(public api: CocktailApiService,
                 public loadingController: LoadingController,
@@ -20,7 +21,16 @@ export class DetailPage implements OnInit {
     }
 
     ngOnInit() {
+        if (!this.route.snapshot.paramMap.get('id')) {
+            this.random = true;
+        }
         this.getCocktail();
+    }
+
+    doRefresh(event) {
+        this.random = true;
+        this.getCocktail();
+        event.target.complete();
     }
 
     async getCocktail() {
@@ -28,7 +38,7 @@ export class DetailPage implements OnInit {
             message: 'Loading'
         });
         await loading.present();
-        if (this.route.snapshot.paramMap.get('id')) {
+        if (!this.random) {
             await this.api.getCocktailById(this.route.snapshot.paramMap.get('id'))
                 .subscribe(res => {
                     this.cocktail = res.drinks[0];
